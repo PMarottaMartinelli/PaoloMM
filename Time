@@ -1,0 +1,45 @@
+from datetime import datetime, date, time, timedelta
+
+
+today = date.today()
+print(f"Das heutige Datum ohne Uhrzeit - date: {today}")
+print(f"Jahr: {today.year}")
+
+
+today = datetime.today()
+print(f"Das heutige Datum mit Uhrzeit - datetime: {today}")
+
+print("Timedelta. Datum von gestern ist:")
+delta = timedelta(days=1)
+yesterday = date.today() - delta
+print(f"Das Datum gestern: {yesterday}")
+yesterday = datetime.today() - delta
+print(f"Das Datum gestern, Uhrzeit-genau: {yesterday}")
+
+"""
+Format
+"""
+
+print(f"datetime-Objekt zu String, standart: {today}")
+# gibt das gleich wie:
+print(f"datetime-Objekt zu String, isoformat(): {today.isoformat()}")
+
+datetime_obj = datetime.fromisoformat("2023-08-23T23:59:59")
+print(f"ISO-String zu datetime-Objekt, fromisoformat(): {datetime_obj}")
+
+
+"""
+Format, beliebig
+"""
+
+print(
+    f"datetime-Objekt zu String m. strftime(), nur Wochentagsname: {today.strftime('%A')}"
+)
+
+datetime_obj = datetime.strptime("31/08/23 23:59:59", "%d/%m/%y %H:%M:%S")
+print(f"Beliebiger String zu datetime-Objek mit Format-Angabe: {datetime_obj}")
+
+datetime_obj = datetime.strptime(
+    "Tag 31, Monat 08, Jahr 22", "Tag %d, Monat %m, Jahr %y"
+)
+print(f"Beliebiger String zu datetime-Objek mit Format-Angabe: {datetime_obj}")
