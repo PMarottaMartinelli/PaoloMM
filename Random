@@ -1,0 +1,59 @@
+import random
+
+random.seed()
+
+"""
+basic
+"""
+
+print(f"random.randint(1,10): {random.randint(1,10)}")
+
+# seed explizit setzen -> immer selbe "Zufalls"zahlen
+random.seed(1000)
+print(f"random.randint(1,10), seed 1000: {random.randint(1,10)}")
+random.seed(1000)
+print(f"random.randint(1,10), seed 1000: {random.randint(1,10)}")
+
+# wieder zufällig setzen
+random.seed()
+
+# Auswahl
+
+l = ["a", "b", "c"]
+print(f"random.choice(): {random.choice(l)}")
+# äquivalent, aber nur führ Zahlen:
+print(f"random.randrange(1,10): {random.randrange(1,10)}")
+print(f"random.randrange(1,100, 3): {random.randrange(1,100, 3)}")
+
+
+"""
+Ziehen mit Zurücklegen
+"""
+
+roulette_colors = ["red", "black", "green"]
+weights = [18, 18, 2]
+print(
+    f"random.choices(), vier Drehungen am Roulette-Rad: {random.choices(roulette_colors, weights, k=4)}"
+)
+
+"""
+Ziehen ohne Zurücklegen
+"""
+gummibears = ["red", "green", "yellow", "orange", "white"]
+sample = random.sample(gummibears, counts=[10, 10, 10, 10, 10], k=5)
+print(f"Gummibärchen Ziehung: {sample}")
+
+
+"""
+Mischen, IN PLACE
+"""
+
+l = list(range(1, 20))
+random.shuffle(l)
+print(f"Zahlen gemischt: {l}")
+
+"""
+0.0 <= Zahl <=1.0
+"""
+
+print(f"random.random(): {random.random()}")
