@@ -1,3 +1,6 @@
+# Ein Klickerspiel, bei dem die Anzahl der Raketen durch klicken erhöht wird.
+# Wenn die Anzahl von 50 erreicht ist, beginnt der Counter automatisch hochzuzählen.  
+
 import turtle
 
 wn = turtle.Screen()
