@@ -1,0 +1,27 @@
+def esc(c):
+    return f'\033[{c}m'
+
+def col_char(c):
+    return esc(101) + c + esc(0)
+
+def col_str(s, f, m):
+    return ''.join(col_char(c) if f and not i % m else c for i, c in enumerate(s))
+
+def print_tree(height, trunk_size):
+    for i in range(height):
+        spaces = ' ' * (height - i)
+        tree_part = col_str('*' * (1 + 2 * i), not i % 2, 4)
+        print(spaces + tree_part)
+
+    trunk_spaces = ' ' * (height - trunk_size // 2)
+    trunk = col_str('|' * trunk_size, True, 1)
+    print(trunk_spaces + trunk)
+
+def main():
+    user_height = int(input("Enter the height of the tree: "))
+    user_trunk_size = int(input("Enter the trunk size of the tree: "))
+    
+    print_tree(user_height, user_trunk_size)
+
+if __name__ == "__main__":
+    main()
