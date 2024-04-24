@@ -1,3 +1,8 @@
+# Ein durch Tkinter visualisierter Bruchrechner
+# Man kann damit zwei Brüche entweder addieren, subtrahieren, multiplizieren oder dividieren.
+# In einem Ergebnisfeld wird das Ergebnis angezeigt.
+
+
 #Einbinden von tkinter
 from tkinter import *
 
