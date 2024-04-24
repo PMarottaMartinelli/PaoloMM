@@ -1,0 +1,34 @@
+# importieren der Widmark-Funktion
+from Widmark import berechne_Widmark_Formel
+from Widmark import pruefe_Eingaben
+
+"""
+def berechne_Widmark_Formel(volumen, alkohol_volumen_anteil, verteilungsfakor, masse):
+    dichte_alkohol = 0.8
+    masse_Alkohol = volumen * alkohol_volumen_anteil * dichte_alkohol
+    alkohol_konzentration = masse_Alkohol / (masse * verteilungsfakor)
+    return alkohol_konzentration
+"""
+
+getraenk = input("Bitte Getränk [Bier, Wein, Scotch] auswählen: ")
+dict_alkohol_volumen_anteil = {"Bier": 0.05,
+                               "Wein": 0.12,
+                               "Scotch": 0.46}
+
+alkohol_volumen_anteil = dict_alkohol_volumen_anteil[getraenk]
+"""
+if getraenk == "Bier":
+    alkohol_volumen_anteil = 0.05
+elif getraenk == "Wein":
+    alkohol_volumen_anteil = 0.12
+elif getraenk == "Scotch":
+    alkohol_volumen_anteil = 0.46
+else:
+    alkohol_volumen_anteil = 0.00
+"""
+volumen = int(input("Menge [ml]"))
+
+blut_alkohol_konzentration = berechne_Widmark_Formel(volumen, alkohol_volumen_anteil, 0.7, 80)
+print(blut_alkohol_konzentration)
+print(berechne_Widmark_Formel.__doc__)
+print(pruefe_Eingaben.__doc__)
