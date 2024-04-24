@@ -1,3 +1,7 @@
+# Die Ampel wird mit Tkinter dargestellt.
+# Man kann die Ampelzustände durchschalten.
+
+
 import tkinter as tk
 
 from class_Ampel import Ampel_Auto, Ampel_Fussgänger
